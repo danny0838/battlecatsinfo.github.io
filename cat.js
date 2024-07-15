@@ -744,6 +744,13 @@ class Form {
 class CatInfo {
   constructor(id, t4) {
     id instanceof Object ? Object.assign(this, id) : (this.loadTalents(id), this.loadAttitional(id)), t4 && (this.t4 = t4)
+    if (this.talents && !(this.talents instanceof Int16Array)) {
+      const talents = Object.entries(this.talents);
+      this.talents = new Int16Array(talents.length);
+      for (const [key, value] of talents) {
+        this.talents[parseInt(key, 10)] = value;
+      }
+    }
   }
   getRarityString(cat_id) {
     return ["基本", "EX", "稀有", "激稀有", "超激稀有", "傳說稀有"][this.rarity]
@@ -922,32 +929,18 @@ async function getText(url) {
   throw "load failed"
 }
 async function getAllEnemies() {
-  var enemy_data = await getJSON("/data/enemies.json"),
-    t_unit = (fandom = await getJSON("/data/fandomEnemyNames.json"), (await getText("/data/t_unit.csv")).replace("\r", "").split("\n").filter(x => x.trim()).map(line => line.split(",").map(x => parseInt(x)))),
-    en_tw = (enemy_descs = enemy_data["tw-desc"], anim1 = enemy_data.backswing, enemy_data["tw-name"]),
-    en_jp = enemy_data["jp-name"],
-    traits = enemy_data.trait,
-    enemies = new Array(t_unit.length);
-  for (let id = 2; id < enemies.length; ++id) {
-    var unit_file = t_unit[id],
-      y = id - 2;
-    enemies[id] = new Enemy(id, en_tw[y], en_jp[y], unit_file, traits[y])
-  }
-  return anim1 = fandom = enemy_descs = enim1 = null, enemies
+  const data = await getJSON("/data/enemy.json");
+  delete data[0];
+  delete data[1];
+  return data.map(x => new Enemy(x.data));
 }
 async function getAllCats() {
-  var loader_text = document.getElementById("loader-text"),
-    all_cats = (loader_text.textContent = "載入中(1/5)", (await getText("/data/all_cats")).split("\n")),
-    cat_data = (loader_text.textContent = "載入中(2/5)", await getJSON("/data/cat.json")),
-    t4 = (loader_text.textContent = "載入中(3/5)", fandom = await getJSON("/data/fandomCatNames.json"), loader_text.textContent = "載入中(4/5)", unit_buy = await getText("/data/unitbuy.csv"), loader_text.textContent = "載入中(5/5)", skill_file = await getText("/data/SkillAcquisition.csv"), loader_text.textContent = "即將完成", rwMap = cat_data.rwMap, tfMap = cat_data.tfMap, cat_data.t4),
-    levels = cat_data.curve,
-    tw_n = cat_data["tw-name"],
-    jp_n = cat_data["jp-name"],
-    dec = cat_data["tw-desc"],
-    ic = cat_data.ic,
-    cats = (enemy_descs = cat_data.involve, anim1 = cat_data.backswing, unit_orbs = cat_data.orb, obtainid = cat_data.obtain, new Array(anim1.length));
-  for (let id = 0; id < cats.length; ++id) cats[id] = new Cat(id, all_cats[id].split("\t"), levels[id], tw_n[id], jp_n[id], dec[id], ic[id], t4[id]);
-  return enemy_descs = anim1 = fandom = obtainid = skill_file = rwMap = tfMap = unit_buy = null, cats
+  const data = await getJSON("/data/cats.json");
+  return data.map(x => {
+    const c = new Cat(x.data);
+    c.init();
+    return c;
+  });
 }
 
 function onupgradeneeded(event) {
