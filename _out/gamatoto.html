@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>加碼多多隊員一覽</title>
+	<meta property="og:site_name" content="battlecatsinfo.github.io">
+	<meta property="og:title" content="加碼多多隊員一覽">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<style>
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+	::-webkit-scrollbar-thumb {
+		background: #888;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
+	h1 {
+		font-size: 2em;
+	}
+	h2 {
+		font-size: 1.5em;
+	}
+	h3 {
+		font-size: 1.3em;
+	}
+	:root {
+		--bg: #fff;
+		--color: black;
+		--ac: #4d64ff;
+		--th: #eee;
+	}
+	:root.dark {
+		--bg: #141414;
+		--color: #f8f8f2;
+		--ac: #7c8eff;
+		--th: #2f2f2f;
+	}
+	.w3-card {
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	}
+	input {
+		font: inherit;
+		margin: 0;
+		text-align: left;
+	}
+	body {
+		color: var(--color);
+		background-color: var(--bg);
+		padding: 0;
+		margin: 0;
+		font-family: "Noto Sans TC", 微軟正黑體, "Microsoft JhengHei", system-ui;
+	}
+	.E {
+		width: 65%;
+		margin: 0 auto;
+	}
+	@media only screen and (max-width: 1100px) {
+		.E {
+		width: 80%;
+		}
+	}
+	@media only screen and (max-width: 768px) {
+		.E {
+		width: 96%;
+		}
+	}
+	.B:hover {
+		color: #000 !important;
+		background-color: #ccc !important;
+	}
+	.M {
+		z-index: 3;
+		display: none;
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(0, 0, 0) !important;
+		background-color: rgba(0, 0, 0, 0.4) !important;
+	}
+	.C {
+		margin: auto;
+		position: relative;
+		padding: 0;
+		outline: 0;
+		width: 600px;
+		background-color: var(--bg);
+	}
+	@media (max-width: 600px) {
+		.C {
+		margin: 0 10px;
+		width: auto !important;
+		}
+		.M {
+		padding-top: 30px;
+		}
+	}
+	@media (min-width: 600px) {
+		.C {
+		width: 595px;
+		}
+	}
+	@media (min-width: 700px) {
+		.C {
+		width: 650px;
+		}
+	}
+	@media (min-width: 800px) {
+		.C {
+		width: 700px;
+		}
+	}
+	@media (min-width: 900px) {
+		.C {
+		width: 800px;
+		}
+	}
+	@media (min-width: 1000px) {
+		.C {
+		width: 900px;
+		}
+	}
+	@media (min-width: 1100px) {
+		.C {
+		width: 1000px;
+		}
+	}
+	@media (min-width: 1200px) {
+		.C {
+		width: 1100px;
+		}
+	}
+	a,
+	a:visited,
+	a:hover,
+	a:active {
+		color: var(--ac) !important;
+		text-decoration: none;
+		cursor: pointer;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	th,
+	td {
+		border: 1px solid #ccc;
+		padding: 0.5em;
+	}
+	table {
+		text-align: center;
+		width: 100%;
+		margin: 0 auto;
+		border-collapse: collapse;
+		margin-bottom: 1em;
+	}
+	blockquote {
+		border-left-style: solid;
+		border-left-width: 0.2em;
+		border-left-color: rgb(204, 204, 204);
+		margin: 1.5em 0;
+		padding-left: 1.5em;
+		line-height: 2.4em;
+	}
+	th {
+		background-color: var(--th);
+		font-weight: normal;
+	}
+	.C th,
+	.C td {
+		padding: 0.5em;
+	}
+	.C td {
+		border: none;
+		border-top: 1px solid #ccc;
+	}
+	</style>
+	<script src="/utils.js"></script>
+</head>
+<body>
+	<!--nav-bar-->
+	<style>
+	.topnav {
+		background-color: #333 !important;
+		margin-block: 0;
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		font-size: max(1.5vw, 10px) !important;
+	}
+	.topnav > a {
+		display: inline-block;
+		color: #f2f2f2 !important;
+		padding: 1vh 2vw;
+		text-decoration: none;
+		cursor: pointer;
+		vertical-align: middle;
+	}
+	.topnav > a.active {
+		background-color: #4caf50 !important;
+	}
+	.topnav > a:visited {
+		text-decoration: none;
+	}
+	.topnav > a:hover {
+		background-color: #009688 !important;
+	}
+	.topnav svg {
+		background-color: inherit !important;
+		height: 1.3em;
+	}
+	#site-search {
+		display: none;
+		background-color: transparent;
+	}
+	#site-search input {
+		border: 1px solid rgba(0, 0, 0, 0.25) !important;
+		border-radius: 25px;
+		padding: 0.1em 0.2em;
+		width: 175px;
+		font-size: 17px;
+		font-style: italic;
+		color: black !important;
+		background-color: white !important;
+	}
+	#search-btn {
+		all: unset;
+		vertical-align: middle;
+		cursor: pointer;
+		background-color: transparent !important;
+	}
+	#search-btn svg {
+		width: 12px;
+		height: 12px;
+		fill: white;
+	}
+	@media (min-width: 800px) {
+		#site-search {
+			display: inline;
+		}
+		#site-search input {
+			display: inline-block;
+			width: 20vw;
+		}
+		#search-btn {
+			position: relative;
+			top: 3px;
+			right: 30px;
+		}
+		#search-btn svg {
+			height: 22px;
+			width: 22px;
+			fill: black;
+		}
+	}
+	#site-s-result {
+		background-color: white !important;
+		position: absolute;
+		z-index: 10;
+		left: 0;
+		top: 0;
+	}
+	#site-s-result > * {
+		width: 100%;
+		padding: 0.7em 2em;
+		color: black !important;
+		background-color: transparent !important;
+	}
+	#site-s-result > *:hover {
+		background-color: #e7e7e7 !important;
+		color: black !important;
+	}
+	</style>
+	<div class="topnav">
+		<a href="/index.html">主頁</a>
+		<a href="/search.html">貓咪</a>
+		<a href="/esearch.html">敵人</a>
+		<a href="/gachas.html">轉蛋</a>
+		<a href="/stage.html">關卡</a>
+		<a title="設定" href="/settings.html" style="float:right;">
+			<svg viewBox="0 0 24 24">
+				<path d="M20.1 9.2214C18.29 9.2214 17.55 7.9414 18.45 6.3714C18.97 5.4614 18.66 4.3014 17.75 3.7814L16.02 2.7914C15.23 2.3214 14.21 2.6014 13.74 3.3914L13.63 3.5814C12.73 5.1514 11.25 5.1514 10.34 3.5814L10.23 3.3914C9.78 2.6014 8.76 2.3214 7.97 2.7914L6.24 3.7814C5.33 4.3014 5.02 5.4714 5.54 6.3814C6.45 7.9414 5.71 9.2214 3.9 9.2214C2.86 9.2214 2 10.0714 2 11.1214V12.8814C2 13.9214 2.85 14.7814 3.9 14.7814C5.71 14.7814 6.45 16.0614 5.54 17.6314C5.02 18.5414 5.33 19.7014 6.24 20.2214L7.97 21.2114C8.76 21.6814 9.78 21.4014 10.25 20.6114L10.36 20.4214C11.26 18.8514 12.74 18.8514 13.65 20.4214L13.76 20.6114C14.23 21.4014 15.25 21.6814 16.04 21.2114L17.77 20.2214C18.68 19.7014 18.99 18.5314 18.47 17.6314C17.56 16.0614 18.3 14.7814 20.11 14.7814C21.15 14.7814 22.01 13.9314 22.01 12.8814V11.1214C22 10.0814 21.15 9.2214 20.1 9.2214ZM12 15.2514C10.21 15.2514 8.75 13.7914 8.75 12.0014C8.75 10.2114 10.21 8.7514 12 8.7514C13.79 8.7514 15.25 10.2114 15.25 12.0014C15.25 13.7914 13.79 15.2514 12 15.2514Z" fill="white" />
+			</svg>
+		</a>
+		<a title="佈景主題" onclick="utils.toggleTheme()" style="float:right;">
+			<svg viewBox="0 0 24 24">
+				<path fill="white" d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20 L12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 Z" />
+			</svg>
+		</a>
+		<a style="position:relative;float:right;">
+			<form id="site-search">
+				<input autocomplete="off" type="text" placeholder="Search..." aria-label="search">
+				<button type="submit" id="search-btn">
+					<svg viewBox="0 0 50 50" width="50px" height="50px">
+						<path d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z" />
+					</svg>
+				</button>
+			</form>
+			<div style="position: relative;" class="w3-card">
+				<div id="site-s-result" hidden>
+					<div data-search="/search.html">搜尋貓咪</div>
+					<div data-search="/esearch.html">搜尋敵人</div>
+					<div data-search="/stage.html">搜尋關卡</div>
+				</div>
+			</div>
+		</a>
+	</div>
+	<script src="/navbar-search.js"></script>
+	<!--/nav-bar-->
+	<h1 style="text-align:center;">
+		加碼多多隊員一覽
+		<div style="font-size:0.6em;">Ver 13.6</div>
+	</h1>
+	<div class="E">
+	<p>圖片來源： <a href="https://battle-cats.fandom.com/wiki/Gamatoto_Expedition">Battle Cats Wiki - Fandom</a>
+	</p>
+	<table>
+		<thead>
+			<tr>
+				<th>名稱</th>
+				<th>圖片</th>
+				<th>等級</th>
+				<th>描述</th>
+				<th>效果</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>伊奈利（いなり）</td>
+				<td><img src="/img/g/jinja.png"></td>
+				<td>特殊</td>
+				<td>來自神的使者臨時加入加碼多多探險隊的狐狸</td>
+				<td>獲得獎勵限一次數量增加<br>※貓罐頭除外</td>
+			</tr>
+			<tr>
+				<td>雪音兔（ラビット・ユキネ）</td>
+				<td><img src="/img/g/gc3.png"></td>
+				<td>特殊</td>
+				<td>加碼多多探險隊中臨時加入的雪未來的寵物兔子</td>
+				<td>將在合作期間中帶來更多量的獎勵。<br>※貓罐頭除外</td>
+			</tr>
+			<tr>
+				<td>剛達（ガンダー）</td>
+				<td><img src="/img/g/gc0.png"></td>
+				<td>特殊</td>
+				<td>來自實況野球的加碼多多探險隊臨時隊員</td>
+				<td>合作活動期間中，會讓獲得獎勵的數量增加<br>※貓罐頭除外</td>
+			</tr>
+			<tr>
+				<td>祖克柏（ギーク）</td>
+				<td><img src="/img/g/gc1.png"></td>
+				<td>特殊</td>
+				<td>來自消滅都市的加碼多多探險隊臨時隊員技術者</td>
+				<td>合作活動期間中，獲得獎勵數量增加<br>※貓罐頭除外</td>
+			</tr>
+			<tr>
+				<td>圖圖（トト）</td>
+				<td><img src="/img/g/gc2.png"></td>
+				<td>特殊</td>
+				<td>來自梅露可物語的加碼多多探險隊臨時魔寵隊員</td>
+				<td>活動期間中，獲得獎勵數量增加<br>※貓罐頭除外</td>
+			</tr>
+			<tr>
+				<td>阿飛/にゃんた/Ralf /냥숙</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>志喵/しきお/T-Bone /냥철</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>小玉/たま/Pam /숙자</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>肥肥/ぷんぷん/Johann /테츠</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>二號/じろー/Elmo /춘화</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>丸子/でんでん/Joey /봉심</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>坦克/ぱーこ/Clyde /쿠로</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>小花/みけ/Max /삼순</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>虎毛/どら/Sammy /말숙</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>毛毛/こたろー/Bert /춘향</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>黃黃/ごん/Rosie /은실</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>螯蝦/ざりがに/Banjo /우바</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>丹丹/ひろき/Angus /캐시</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>小黃瓜/きゅうり/Ian /스타</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>珍珠/たぴおか/Elmo /철수</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>點點/げんげん/Wilbur /참외</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>仙貝/せんべい/Ash /철호</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>阿西/かっしー/Felix /효민</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>甜甜/ぺろ/Chip /파인</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>小愛/あい/Kevin /애플</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>巧克力/ちょこ/Yuta /럼</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>綿綿/えの/Nate /봉식</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>豆豆/ぷるりん/Keith /달봉</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>老媽子/おふくろ/Gary /만득</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>可可/はにゃわ/Jack /봉남</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>伯朗/もんぶらん/Pedro /몽블랑</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>環環/りんく/Hank /사과</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>小紅/べに/Morty /오렌지</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>雨果/ゆうご/Boris /감귤</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>親親/ころちん/Derp /철식</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>噗丁/ぷっちん/Helga /희순</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>玲玲/りんりん/Imogen /은미</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>真真/まさこ/Tina /찬스</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>中島/なかじま/Deb /파브</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>橘子/ふじおか/Gordy /철쭉</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>妞妞/うっしー/Olli /지즈</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>小香/えりか/Arnie /아고</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>魚板/かまぼこ/Yoyo /영철</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>乾麵/うどん/Peet /덕만</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>春天/かすが/Theo /방석</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>牛奶/みるく/Alex /충재</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>波波/ぽよん/Carrie /보영</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>凱莉/きゃりー/Ted /백금</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>露露/ぱみゅ/Annie /오이</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>小泉/いずみ/Simon /호현</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>純純/あつし/Marc /에마</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>寶寶/げれげれ/Jesse /유미</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>球球/さっちー/Bert /게레</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>呆呆/まさる/Sophie /계순</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>凱凱/にんたん/Jen /봉숙</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>綠藻/まりも/Donny /금실</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>文文/くにお/Finn /순자</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>阿強/かず/Lily /수박</td>
+				<td><img src="/img/g/g0.png"></td>
+				<td>小角色</td>
+				<td>累積經驗中的見習隊員</td>
+				<td>道具發掘效率上升【小】</td>
+			</tr>
+			<tr>
+				<td>艾瑪/エマ/Tig /심유</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>雅戈/アゴ/Petey /원균</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>強森/チャンス/Bill /재섭</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>帕福/パフ/Baxter /은식</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>門貝/モンペ/Jann /중이</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>吉智/ジズー/Ian /현옥</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>拉姆/ラム/Sally /럼</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>乃麻/ウバ/Alvin /복룡</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>凱西/キャシー/Ursula /심토</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>明星/スター/Lee /용배</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>角頭/クロ/Henry /성희</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>五郎/ゴロー/Jonny /미지</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>小鐵/テツ/Axel /송이</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>沙科奇/サクジ/Sid /민규</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>利頓/リットン/Peggy /윤찬</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>年糕/モチ/Ilsa /성모</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>喵達/ニャンダ/Ellen /준선</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>馬利/マリー/Butch /재형</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>腓力克/フェリック/Max /준석</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>椪柑/ヒロポン/Orville /필로</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>世修/セワシ/Howie /세우시</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>土星/サテン/Clara /사텐</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>奇納利/キナリ/Maria /키나리</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>肋排/カルビ/Kumiko /갈비</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>西伯利亞/シベチョー/Chichi /소세</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>瘦爺/カリガリ/Jay /카리</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>荷西/ポンセ/Bjorn /사키</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>金剛/キング/Iris /폰세</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>彼得/ポロリ/Hiram /킹</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>火腿/ハム/Zip /햄</td>
+				<td><img src="/img/g/g1.png"></td>
+				<td>中堅</td>
+				<td>探險技術相當上手的優秀隊員</td>
+				<td>道具發掘效率上升【中】</td>
+			</tr>
+			<tr>
+				<td>遠志/えい太/Baron /최병장</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>松本/松本/Oliver /김서방</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>天婦羅/天ぷら/Lew /이부장</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>蛋花湯/出汁/Manuel /된장국</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>慕容喵/佐藤/Inga /설탕</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>柴貓/ジバねこ/Noah /전지현</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>少爺/若さま/Ziggy /도련님</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>軍師/カン助/Frida /현빈</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>喵靖山/ゴン太/Walt /박비서</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>喵平蕊/伸介/Dewey /백사장</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>歐陽喵/ねこ三郎/Nova /송지효</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>喵雨竹/さち子/Mandy /채과장</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>喵鎮南/とば次郎/Sue /위스키</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>魚乾/干物/Barry /유재석</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>夜雨/六三四/Kanta /김민희</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>喵慈大師/よね助/Sybil /김태희</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>天喵道長/がり蔵/Loki /이병헌</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>喵掌門/米蔵/Myra /원빈</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>金喵護法/ぬけ作/Rocky /가래떡</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>小喵助/ちょび助/Tess /배용준</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>喵一爪/玉三郎/Kitt /송중기</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>陳高/しげ里/Pierce /이슬</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>大吟釀/大吟醸/Otto /막걸리</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>弁慶/弁慶/Pearl /비어</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>飛燕/あさ子/May /해바라기</td>
+				<td><img src="/img/g/g2.png"></td>
+				<td>老手</td>
+				<td>經驗老道且值得信賴的隊員</td>
+				<td>道具發掘效率上升【大】</td>
+			</tr>
+			<tr>
+				<td>克莉絲汀/クリスティーナ/Pedro /크리스티나</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>黑胡椒牛柳/ストロガノフ/Keenan /윌리엄</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>克麗奧佩脫拉/クレオパトラ/Jordan /클레오파트라</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>拿破崙/ナポレオン/Ima /나폴레옹</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>備前長船長光/子鉄/Ivana /에디슨</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>卡美哈梅哈/カメハメハ/Ginger /베토벤</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>玉藻前/タマモノマエ/Herbie /알렉스</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>賈霸/まんぞく/Corey /에드워드</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>拉布拉多/ラブラドール/Brock /엘리자베스</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>安東尼/アントニオ/George /안토니오</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>加加林/ガガリン/Anita /브라이언</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>赤兔喵/ライスシャワー/Denny /크리스</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>阿爾弗雷德/アルフレド/Fredo /알프레드</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>萊茵哈特/ラインハルト/Sonny /토머스</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>紅燒牛肉麵/合点承知の助/Daisy /올리비아</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>香檳王喵貝里儂/ドンペリニャン/Toots /베티</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>亞森喵蘋/峰不二ネコ/Nora /엔젤</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>喵吒三太子/聖徳にゃん子/Louie /라이언</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>風魔喵太郎/風魔ネコ太郎/Toni /제시카</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>鯽左衛門/フナ左衛門/Scotty /레오</td>
+				<td><img src="/img/g/g3.png"></td>
+				<td>精英</td>
+				<td>通過無數考驗，技術高超的隊員</td>
+				<td>道具發掘效率上升【特大】</td>
+			</tr>
+			<tr>
+				<td>戰神/ちゅーる/Nottingham /진주</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>健次郎/けんしろう/Kenshiro /오팔</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>卑彌呼/ひみこ/Himiko /비취</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>龍王/りゅうおう/Merlin /문스톤</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>御靈魔/ミタマックス/Maximilian /가넷</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>素戔嗚尊/スサノオ/Thorvald /사파이어</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>海克力斯/ヘラクレス/Hercules /토파즈</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>金剛鑽石/ダイヤモンド/Diamond /다이아몬드</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>礦藍寶石/サファイア/Sapphire /에메랄드</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>暮光之人/トワイライト/Twilight /카넬리안</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>戈貢佐拉/ゴルゴンゾーラ/Gorgonzola /페리도트</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>諾貝阿爾/ノーベル/Ludvig /루비</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>成之龍/ニャッキーチェン/Augustus /아쿠아마린</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>時尚主貓/ネコダンディズム/Fauntleroy /수정</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>波諾/ポノ/Pono /알렉산드라이트</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>貓政宗/ねこ政宗/Toyotomi /스피넬</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>魚干伯爵/にぼし伯爵/Voltaire /탄자나이트</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>槌之子/ツチノ子/Tsuchinoko /로즈쿼츠</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>脆迪哥/クラッカー前田/Ramensky /코랄</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+			<tr>
+				<td>貓多夫/ニャンドロフ/Orlov /시트린</td>
+				<td><img src="/img/g/g4.png"></td>
+				<td>傳說</td>
+				<td>歷經千辛萬苦戰鬥的傳說隊員</td>
+				<td>道具發掘效率上升【超特大】</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</body>
+</html>
