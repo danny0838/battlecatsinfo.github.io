@@ -73,7 +73,7 @@ module.exports = class extends SiteGenerator {
 			});
 		}
 
-		this.write_json('cat.json', cats);
+		this.write_json('cat.json', cats, null, 2);
 	}
 
 	generate_enemy() {
