@@ -65,7 +65,7 @@ module.exports = class extends SiteGenerator {
 			map,
 			stage,
 			extra,
-		});
+		}, null, 2);
 	}
 
 	generate_pages({stageScheme, eggs}) {
