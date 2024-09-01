@@ -63,17 +63,6 @@
 	}
 	</style>
 	<script src="/utils.js"></script>
-	<script>
-	function Switch() {
-		let x = localStorage.getItem('unit');
-		if (!x || x == 'S') {
-			localStorage.setItem('unit', 'F');
-			return alert('單位切換成「F」(幀)');
-		}
-		localStorage.setItem('unit', 'S');
-		alert('單位切換成「秒」');
-	}
-	</script>
 </head>
 <body>
 	<!--nav-bar-->
